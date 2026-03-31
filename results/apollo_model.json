@@ -1,0 +1,106 @@
+{
+  "tasks": {
+    "V1": {
+      "name": "Localization",
+      "wcet": 18.2,
+      "sensor": "GNSS",
+      "deps": []
+    },
+    "V2": {
+      "name": "Segmentation",
+      "wcet": 49.8,
+      "sensor": "LiDAR",
+      "deps": []
+    },
+    "V3": {
+      "name": "Image Processing",
+      "wcet": 26.3,
+      "sensor": "Camera1",
+      "deps": []
+    },
+    "V4": {
+      "name": "Image Processing*",
+      "wcet": 24.9,
+      "sensor": "Camera2",
+      "deps": []
+    },
+    "V5": {
+      "name": "Recognition",
+      "wcet": 8.4,
+      "sensor": null,
+      "deps": [
+        "V2"
+      ]
+    },
+    "V6": {
+      "name": "Traffic Light",
+      "wcet": 48.4,
+      "sensor": null,
+      "deps": [
+        "V3"
+      ]
+    },
+    "V7": {
+      "name": "Traffic Light*",
+      "wcet": 39.2,
+      "sensor": null,
+      "deps": [
+        "V4"
+      ]
+    },
+    "V8": {
+      "name": "Prediction",
+      "wcet": 18.6,
+      "sensor": null,
+      "deps": [
+        "V1",
+        "V5"
+      ]
+    },
+    "V9": {
+      "name": "Planning",
+      "wcet": 86.4,
+      "sensor": null,
+      "deps": [
+        "V6",
+        "V7",
+        "V8"
+      ]
+    }
+  },
+  "sensors": {
+    "GNSS": {
+      "freq_hz": 12.5,
+      "period_ms": 80.0
+    },
+    "LiDAR": {
+      "freq_hz": 10.0,
+      "period_ms": 100.0
+    },
+    "Camera1": {
+      "freq_hz": 15.0,
+      "period_ms": 66.7
+    },
+    "Camera2": {
+      "freq_hz": 15.0,
+      "period_ms": 66.7
+    },
+    "CANBUS": {
+      "freq_hz": 10.0,
+      "period_ms": 100.0
+    }
+  },
+  "hyper_period_ms": 400.0,
+  "critical_path_ms": 163.2,
+  "exec_order": [
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V5",
+    "V6",
+    "V7",
+    "V8",
+    "V9"
+  ]
+}

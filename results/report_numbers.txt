@@ -1,0 +1,11 @@
+Max AoI Apollo-I  = 349.4ms
+Max AoI Apollo-II = 367.4ms
+Max AoI OURS      = 252.4ms
+Avg AoI Apollo-I  = 230.1ms
+Avg AoI Apollo-II = 242.4ms
+Avg AoI OURS      = 221.7ms
+Throughput Apollo-I  = 6.00 rps
+Throughput Apollo-II = 5.40 rps
+Throughput OURS      = 5.90 rps
+Max AoI gain vs Apollo-I = 27.8%
+Avg AoI gain vs Apollo-I = 3.7%
